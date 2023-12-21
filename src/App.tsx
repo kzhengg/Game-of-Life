@@ -66,15 +66,17 @@ const App: React.FC = () => {
 
   return (
     <>
+      <h2 style={{ textAlign: "center" }}>Conway's Game of Life</h2>
       <div
         style={{
           display: "flex",
           justifyContent: "center",
+          gap: 30,
           height: 40,
-          paddingTop: 30,
         }}
       >
         <button
+          style={{ borderRadius: "20px", width: 80 }}
           onClick={() => {
             setRunning(!running);
             if (!running) {
@@ -86,6 +88,7 @@ const App: React.FC = () => {
           {running ? "stop" : "start"}
         </button>
         <button
+          style={{ borderRadius: "20px", width: 80 }}
           onClick={() => {
             setGrid(generateEmptyGrid());
           }}
@@ -93,6 +96,7 @@ const App: React.FC = () => {
           clear
         </button>
         <button
+          style={{ borderRadius: "20px", width: 80 }}
           onClick={() => {
             const rows = [];
             for (let i = 0; i < numRows; i++) {
@@ -111,7 +115,7 @@ const App: React.FC = () => {
         style={{
           display: "grid",
           paddingLeft: 150,
-          paddingTop: 70,
+          paddingTop: 20,
           gridTemplateColumns: `repeat(${numCols}, 20px)`,
         }}
       >
